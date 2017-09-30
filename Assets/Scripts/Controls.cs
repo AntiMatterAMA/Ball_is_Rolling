@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class Controls : MonoBehaviour
+public class Controls : NetworkBehaviour
 {
 
     public float speed;
@@ -15,6 +16,11 @@ public class Controls : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 

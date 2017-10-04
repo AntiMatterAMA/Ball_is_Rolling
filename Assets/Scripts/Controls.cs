@@ -28,9 +28,4 @@ public class Controls : NetworkBehaviour
 
         rb.AddForce(movement * speed);
     }
-
-    public override void OnStartLocalPlayer()
-    {
-        GetComponent<MeshRenderer>().material.color = Color.blue;
-    }
 }
